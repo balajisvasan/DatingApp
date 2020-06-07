@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using AutoMapper;
 using DataApp.API.Data;
 using DataApp.API.Dtos;
+using DataApp.API.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DataApp.API.Controllers
 {
+    [ServiceFilter(typeof(LogUserActivity))]
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
